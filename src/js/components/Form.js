@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { AddMovie } from "../store/AddMovieAction";
+// import { AddMovie } from "../store/AddMovieAction";
 
-function mapDispatchToProps(dispatch) {
-  return {
-    AddMovie: article => dispatch(AddMovie(article))
-  };
-}
 
 class ConnectedForm extends Component {
   constructor(props) {
@@ -25,6 +20,7 @@ class ConnectedForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const { title } = this.state;
+    // console.log(title)
     this.props.AddMovie({ title });
     this.setState({ title: "" });
   }
@@ -46,6 +42,13 @@ class ConnectedForm extends Component {
     );
   }
 }
+
+function mapDispatchToProps(dispatch, props) {
+  return {
+    AddMovie: ({title}) => dispatch({ type: "DATA_LOADED", value: title })
+  };
+}
+
 
 const Form = connect(
   null,

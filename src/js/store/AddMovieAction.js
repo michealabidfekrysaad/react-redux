@@ -16,3 +16,5 @@ import { DATA_LOADED } from "./action-types";
   // export function AddMovie(url) {
   //   return { type: DATA_LOADED , payload: { url } };  }
 
+
+  // it is not used due to saga principles

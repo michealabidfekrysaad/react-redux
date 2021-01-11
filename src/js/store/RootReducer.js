@@ -1,21 +1,21 @@
-import { DATA_LOADED } from "./action-types";
+import { DATA_LOADED_AGAIN, GET_USERS_FAILED } from "./action-types";
 
 const initialState = {
   // articles: [],
-  remoteMovies: []
+  remoteMovies: [],
+  error: null
 };
 
 function rootReducer(state = initialState, action) {
-  // if (action.type === ADD_ARTICLE) {
-  //   return Object.assign({}, state, {
-  //     articles: state.articles.concat(action.payload)
-  //   });
-  // }
-
-  if (action.type === DATA_LOADED) {
-    // console.log("inside the reducer Completed");
+  if (action.type === DATA_LOADED_AGAIN) {
     return Object.assign({}, state, {
-      remoteMovies: action.payload
+      remoteMovies: action.movies.items,
+    });
+  }
+  if (action.type === GET_USERS_FAILED) {
+    return Object.assign({}, state, {
+      remoteMovies: [],
+      error: action.message
     });
   }
   return state;
