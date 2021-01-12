@@ -32,6 +32,7 @@ const apiUrl = "https://www.googleapis.com/books/v1/volumes?q=";
 
 function getApi(action) {
   return function inside () {
+    console.log(action.value);
       return fetch(`${apiUrl}${action.value}`, {
         method: "GET",
         headers: {

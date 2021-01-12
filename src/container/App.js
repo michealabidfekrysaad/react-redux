@@ -1,11 +1,11 @@
 import React from "react";
-import Form from "../components/Form";
+import SearchInput from "../components/SearchInput";
 import Movies from "../components/Movies";
 
 const AppComp = () => (
   <React.Fragment>
       <h2>Search for your movie</h2>
-      <Form />
+      <SearchInput />
       <h2>Movies</h2>
       <Movies />
   </React.Fragment>
