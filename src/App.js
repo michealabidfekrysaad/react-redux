@@ -3,8 +3,8 @@ import { Provider } from "react-redux";
 // import { render } from "react-dom";
 // import Search from "./components/BookForm";
 import "./App.css";
-import Store from "./js/store/Store";
-import AppComp from "./js/components/App";
+import Store from "./store/Store";
+import AppComp from "./container/App";
 
 function App() {
   return (

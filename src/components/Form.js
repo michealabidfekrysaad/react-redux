@@ -43,7 +43,7 @@ class ConnectedForm extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch, props) {
+function mapDispatchToProps(dispatch) {
   return {
     AddMovie: ({title}) => dispatch({ type: "DATA_LOADED", value: title })
   };
