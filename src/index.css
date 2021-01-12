@@ -84,29 +84,9 @@ body {
   font-size: 1.2em;
 }
 
-form {
-  padding: 20px;
-}
 
-input[type='text'] {
-width: 40%;
-padding: 10px;
-box-sizing: border-box;
-margin: 6px 0;
-background: #adafff;
-color: #00013a;
-border: 0;
-}
 
-button[type='submit'] {
-  margin: 10px auto;
-  background: #adafff;
-  border: 0;
-  padding: 6px 20px;
-  display: block;
-  cursor: pointer;
-  font-size: 1.1em;
-}
+
 
 .books-list {
   display: flex;
