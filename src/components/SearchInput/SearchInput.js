@@ -23,10 +23,10 @@ const SearchInput = (props) => {
   };
 
   return (
-    <form>
+    <main>
       <TextInput searchValue={searchValue} handleChange={handleChange} />
       <ButtonSubmit handleSubmit={handleSubmit} />
-    </form>
+    </main>
   );
 };
 
