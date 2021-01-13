@@ -4,9 +4,10 @@ import BookDetails from "../BookDetails/BookDetails";
 import "./Books.css";
 
 const Books = (props) => {
+  // console.log(props);
   return (
     <div className="books-list">
-      {props.movies.length !== 0 ? (
+      {props.movies ? (
         props.movies.map(
           ({
             id,
@@ -37,9 +38,11 @@ const Books = (props) => {
 };
 
 const mapStateToProps = (state) => {
+  // console.log(state);
+  const { items } =state.MoviesReducer
   return {
-    movies: state.remoteMovies,
-    error: state.error,
+    movies: items,
+    // error: state.error,
   };
 };
 

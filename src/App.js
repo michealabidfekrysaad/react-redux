@@ -3,12 +3,12 @@ import { Provider } from "react-redux";
 // import { render } from "react-dom";
 // import Search from "./components/BookForm";
 import "./App.css";
-import Store from "./store/Store";
 import AppComp from "./container/App";
+import store from "./store/index";
 
 function App() {
   return (
-    <Provider store={Store}>
+    <Provider store={store}>
       <div className="App">
         <AppComp/>
       </div>

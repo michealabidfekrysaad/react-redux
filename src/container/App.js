@@ -4,7 +4,7 @@ import Books from "../components/Books/Books";
 
 const AppComp = () => (
   <React.Fragment>
-      <h2>Search for your movie</h2>
+      <h2>Search for your Book</h2>
       <SearchInput />
       <h2>Books</h2>
       <Books />

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import "./SearchInput.css";
 import TextInput from "../TextInput/TextInput";
 import ButtonSubmit from "../ButtonSubmit/ButtonSubmit";
+import { moviesRequest } from "../../store/actions/Movies";
 
 // import { AddMovie } from "../store/AddMovieAction";
 
@@ -17,9 +18,11 @@ const SearchInput = (props) => {
   };
 
   const handleSubmit = (event) => {
+    // console.log(props);
     event.preventDefault();
-    const { AddMovie } = props
-    if (searchValue) AddMovie(searchValue);
+    const { moviesRequest } = props;
+    if (searchValue) moviesRequest({searchValue});
+    // ana weselt lel movies.js inisde saga
   };
 
   return (
@@ -30,11 +33,12 @@ const SearchInput = (props) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    AddMovie: (searchValue) =>
-      dispatch({ type: "DATA_LOADED", value: searchValue }),
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return moviesRequest({});
+//   // return {
+//   //   AddMovie: (searchValue) =>
+//   //     dispatch({ type: "DATA_LOADED", value: searchValue }),
+//   // };
+// };
 
-export default connect(null, mapDispatchToProps)(SearchInput);
+export default connect(null, {moviesRequest})(SearchInput);

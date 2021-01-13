@@ -1,4 +1,0 @@
-export const DATA_LOADED = "DATA_LOADED";
-export const DATA_LOADED_AGAIN = "DATA_LOADED_AGAIN";
-export const GET_USERS_FAILED = "GET_USERS_FAILED";
-
