@@ -6,9 +6,16 @@ import ButtonSubmit from "../ButtonSubmit/ButtonSubmit";
 import { moviesRequest } from "../../store/actions/Movies";
 
 // import { AddMovie } from "../store/AddMovieAction";
+let style = {
+  display: "block",
+  width: "40%",
+  margin: "auto",
+  textAlign: "left",
+};
 
 const SearchInput = (props) => {
   const [searchValue, setSearchValue] = useState("");
+  const [error, setError] = useState({ searchValue: "" });
 
   const handleChange = (event) => {
     const {
@@ -18,16 +25,35 @@ const SearchInput = (props) => {
   };
 
   const handleSubmit = (event) => {
-    // console.log(props);
     event.preventDefault();
     const { moviesRequest } = props;
-    if (searchValue) moviesRequest({searchValue});
+    if (searchValue.length < 5) {
+      setError({
+        searchValue: `increase length of text by ${5 - searchValue.length}`,
+      });
+      style = {
+        ...style,
+        color: "red",
+      };
+    } else {
+      setError({ searchValue: "" });
+      style = {
+        ...style,
+        color: "white",
+      };
+      moviesRequest({ searchValue });
+    }
     // ana weselt lel movies.js inisde saga
   };
 
   return (
     <main>
-      <TextInput searchValue={searchValue} handleChange={handleChange} />
+      <div>
+        <TextInput searchValue={searchValue} handleChange={handleChange} />
+        <span style={style}>
+          {error.searchValue ? error.searchValue : "hint: min-length is 5"}
+        </span>
+      </div>
       <ButtonSubmit handleSubmit={handleSubmit} />
     </main>
   );
@@ -41,4 +67,4 @@ const SearchInput = (props) => {
 //   // };
 // };
 
-export default connect(null, {moviesRequest})(SearchInput);
+export default connect(null, { moviesRequest })(SearchInput);
