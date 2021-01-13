@@ -10,14 +10,17 @@ export const isHandlerEnabled = (config = {}) => {
 export const requestHandler = (request) => {
   if (isHandlerEnabled(request)) {
     // do code
+    // return request
     // put loader
-    // return request.headers["Authorization"] = `bearer  ${token}`;
+    request.headers["Authorization"] = "add-custom-header-to-request";
   }
   return request;
 };
 
 export const successHandler = (response) => {
   if (isHandlerEnabled(response)) {
+    response.headers["Authorization"] = "update-the-custom-header-with-response";
+    // response.headers["loading"] = false;
     // do code
     // remove loader
   }
@@ -26,6 +29,8 @@ export const successHandler = (response) => {
 
 export const errorHandler = (error) => {
   if (isHandlerEnabled(error.config)) {
+    error.config.headers["failed"] = "network-error-try-again"
+    
     //   do code
     // remove loader
   }

@@ -29,7 +29,7 @@ const SearchInput = (props) => {
     const { moviesRequest } = props;
     if (searchValue.length < 5) {
       setError({
-        searchValue: `increase length of text by ${5 - searchValue.length}`,
+        searchValue: `Increase length of text by ${5 - searchValue.length}`,
       });
       style = {
         ...style,

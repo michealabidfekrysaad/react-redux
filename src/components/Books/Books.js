@@ -42,6 +42,7 @@ const mapStateToProps = (state) => {
   const { items } =state.MoviesReducer
   return {
     movies: items,
+    // loading: state.application.loading
     // error: state.error,
   };
 };

@@ -1,11 +1,12 @@
 import axios from "axios";
 import { requestHandler, successHandler, errorHandler } from "./Interceptor";
 
+//   el conetnt-type ale  bab3ato lel request dayman  json
 export const axiosInstance = axios.create({
   baseURL: "https://www.googleapis.com/books/v1/volumes?q=",
-  //   el conetnt-type ale  bab3ato lel request dayman  json
   headers: {
     "Content-Type": "application/json",
+    "Authorization" : "none",
   },
 });
 

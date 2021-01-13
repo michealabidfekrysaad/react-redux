@@ -16,7 +16,7 @@
 }
 
 .card:hover {
-  box-shadow: 5px 5px #adaeffab;
+  box-shadow: 0 0 12px #adaeffab;
 }
 
 a:link {
