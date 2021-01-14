@@ -1,12 +1,12 @@
 import React from "react";
 import "./ButtonSubmit.css";
 
-const ButtonSubmit = ({ handleSubmit }) => {
+const Btn = ({ btnInfo:{handleSubmit, type, content} }) => {
   return (
-    <button type="submit" onClick={handleSubmit}>
-      Search
+    <button type={type} onClick={handleSubmit}>
+      {content}
     </button>
   );
 };
 
-export default ButtonSubmit;
+export default Btn;

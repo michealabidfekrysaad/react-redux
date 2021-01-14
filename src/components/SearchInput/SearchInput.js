@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import "./SearchInput.css";
 import TextInput from "../TextInput/TextInput";
-import ButtonSubmit from "../ButtonSubmit/ButtonSubmit";
+import Btn from "../ButtonSubmit/ButtonSubmit";
 import { moviesRequest } from "../../store/actions/Movies";
 
-// import { AddMovie } from "../store/AddMovieAction";
 let style = {
   display: "block",
   width: "40%",
@@ -54,7 +53,9 @@ const SearchInput = (props) => {
           {error.searchValue ? error.searchValue : "hint: min-length is 5"}
         </span>
       </div>
-      <ButtonSubmit handleSubmit={handleSubmit} />
+      <Btn
+        btnInfo={{ handleSubmit, type: "submit", content: "Search" }}
+      />
     </main>
   );
 };
