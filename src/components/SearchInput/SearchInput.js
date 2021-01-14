@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import "./SearchInput.css";
 import Input from "../Input/Input";
 import Btn from "../Btn/Btn";
-import { moviesRequest } from "../../store/actions/Movies";
+import { BooksRequest } from "../../store/actions/Books";
 
 const SearchInput = (props) => {
   const [searchValue, setSearchValue] = useState("");
@@ -18,14 +18,14 @@ const SearchInput = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const { moviesRequest } = props;
+    const { BooksRequest } = props;
     if (searchValue.length < 5) {
       setError({
         searchValue: `Increase length of text by ${5 - searchValue.length}`,
       });
     } else {
       setError({ searchValue: "" });
-      moviesRequest({ searchValue });
+      BooksRequest({ searchValue });
     }
     // ana weselt lel movies.js inisde saga
   };
@@ -60,11 +60,11 @@ const SearchInput = (props) => {
 };
 
 // const mapDispatchToProps = (dispatch) => {
-//   return moviesRequest({});
+//   return BooksRequest({});
 //   // return {
 //   //   AddMovie: (searchValue) =>
 //   //     dispatch({ type: "DATA_LOADED", value: searchValue }),
 //   // };
 // };
 
-export default connect(null, { moviesRequest })(SearchInput);
+export default connect(null, { BooksRequest })(SearchInput);

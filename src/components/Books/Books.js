@@ -7,8 +7,8 @@ const Books = (props) => {
   // console.log(props);
   return (
     <div className="books-list">
-      {props.movies ? (
-        props.movies.map(
+      {props.books ? (
+        props.books.map(
           ({
             id,
             volumeInfo: { authors, imageLinks, description, previewLink },
@@ -39,9 +39,9 @@ const Books = (props) => {
 
 const mapStateToProps = (state) => {
   // console.log(state);
-  const { items } =state.MoviesReducer
+  const { items } =state.BooksReducer
   return {
-    movies: items,
+    books: items,
     // loading: state.application.loading
     // error: state.error,
   };
