@@ -19,7 +19,6 @@ const SearchInput = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const { moviesRequest } = props;
-    console.log(error.searchValue);
     if (searchValue.length < 5) {
       setError({
         searchValue: `Increase length of text by ${5 - searchValue.length}`,
@@ -32,8 +31,8 @@ const SearchInput = (props) => {
   };
 
   return (
-    <main>
-      <div>
+    <main className="search-input">
+      <form onSubmit={handleSubmit}>
         <Input
           textInfo={{
             searchValue,
@@ -47,10 +46,10 @@ const SearchInput = (props) => {
         <span className={!error.searchValue ? "normal-class" : "error-class"}>
           {error.searchValue ? error.searchValue : "hint: min-length is 5"}
         </span>
-      </div>
+      </form>
       <Btn
         btnInfo={{
-          handleSubmit,
+          handleClick:handleSubmit,
           type: "submit",
           content: "Search",
           classBtn: "submit-class",

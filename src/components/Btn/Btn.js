@@ -1,9 +1,9 @@
 import React from "react";
 import "./Btn.css";
 
-const Btn = ({ btnInfo:{handleSubmit, type, content, classBtn} }) => {
+const Btn = ({ btnInfo:{handleClick, type, content, classBtn} }) => {
   return (
-    <button type={type} onClick={handleSubmit} className={classBtn}>
+    <button type={type} onClick={handleClick} className={classBtn}>
       {content}
     </button>
   );

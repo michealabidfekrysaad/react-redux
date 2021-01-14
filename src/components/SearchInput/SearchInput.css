@@ -1,15 +1,15 @@
-form {
+.search-input form {
     padding: 20px;
   }
 
-.normal-class {
+.search-input .normal-class {
   display: block;
   width: 40%;
   margin: auto;
   text-align: left;
 }
 
-.error-class {
+.search-input .error-class {
   display: block;
   width: 40%;
   margin: auto;
