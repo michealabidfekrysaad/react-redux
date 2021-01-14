@@ -1,4 +1,4 @@
-import * as types from "./LoaderTypes";
+import * as types from "../types/LoaderTypes";
 
 export const loader = isLoading => {
   return isLoading

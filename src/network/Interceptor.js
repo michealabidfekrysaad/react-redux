@@ -1,5 +1,5 @@
 import store from "../store";
-import { loader } from "../store/Loader/LoaderAction";
+import { loader } from "../store/actions/LoaderAction";
 
 export const isHandlerEnabled = (config = {}) => {
   return config.hasOwnProperty("handlerEnabled") && !config.handlerEnabled

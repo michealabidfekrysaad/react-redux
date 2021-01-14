@@ -1,4 +1,4 @@
-import * as types from "./LoaderTypes";
+import * as types from "../types/LoaderTypes";
 
 const INITIAL_STATE = false;
 

@@ -1,9 +1,11 @@
 import axios from "axios";
 import { requestHandler, successHandler, errorHandler } from "./Interceptor";
+import { baseURL } from "../utils.js/constant";
+
 
 //   el conetnt-type ale  bab3ato lel request dayman  json
 export const axiosInstance = axios.create({
-  baseURL: "https://www.googleapis.com",
+  baseURL: baseURL,
   headers: {
     "Content-Type": "application/json",
     "Authorization" : "none",
