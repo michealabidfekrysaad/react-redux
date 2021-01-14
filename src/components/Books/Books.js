@@ -4,7 +4,6 @@ import BookDetails from "../BookDetails/BookDetails";
 import "./Books.css";
 
 const Books = (props) => {
-  // console.log(props);
   return (
     <div className="books-list">
       {props.books ? (
@@ -16,10 +15,7 @@ const Books = (props) => {
             return (
               <div className="book" key={id}>
                 <BookDetails
-                  authors={authors}
-                  imageLinks={imageLinks}
-                  description={description}
-                  previewLink={previewLink}
+                  BookInfo={{ authors, imageLinks, description }}
                 />
               </div>
               // BookInfo={ authors : {authors}, imageLinks:{imageLinks}, description:{description} }
@@ -28,9 +24,9 @@ const Books = (props) => {
             );
           }
         )
-      ) : props.error ? (
-        <div className="book">
-          <span style={{ color: "red" }}>the error: {props.error}</span>
+      ) : props.loading ? (
+        <div className="loading">
+          loading ya bashmohandes mostafa :) ............
         </div>
       ) : null}
     </div>
@@ -38,12 +34,10 @@ const Books = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  // console.log(state);
-  const { items } =state.BooksReducer
+  const { items } = state.BooksReducer;
   return {
     books: items,
-    // loading: state.application.loading
-    // error: state.error,
+    loading: state.loader,
   };
 };
 

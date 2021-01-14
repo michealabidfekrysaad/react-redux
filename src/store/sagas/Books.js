@@ -12,7 +12,6 @@ export function* getBooksRequest({ payload }) {
   try {
     // console.log(payload.searchValue);
     const response = yield call(API.getBooks, payload);
-    // console.log(response.headers["Authorization"]);
     yield put(ACTIONS.BooksReceive(response.data));
   } catch (err) {
     // yield put(ACTIONS.booksReceive(err));
