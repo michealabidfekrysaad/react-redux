@@ -1,4 +1,4 @@
-button[type='submit'] {
+button.submit-class {
     margin: 10px auto;
     background: #adafff;
     border: 0;

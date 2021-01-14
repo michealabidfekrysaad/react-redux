@@ -1,4 +1,4 @@
-input[type="text"] {
+input.text-class {
   width: 40%;
   padding: 10px;
   box-sizing: border-box;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import "./SearchInput.css";
-import TextInput from "../TextInput/TextInput";
-import Btn from "../ButtonSubmit/ButtonSubmit";
+import Input from "../Input/Input";
+import Btn from "../Btn/Btn";
 import { moviesRequest } from "../../store/actions/Movies";
 
 let style = {
@@ -48,13 +48,27 @@ const SearchInput = (props) => {
   return (
     <main>
       <div>
-        <TextInput searchValue={searchValue} handleChange={handleChange} />
+        <Input
+          textInfo={{
+            searchValue,
+            handleChange,
+            placeHolder: "enter your movie name",
+            type: "text",
+            id: "searchValue",
+            classInput: "text-class"
+          }}
+        />
         <span style={style}>
           {error.searchValue ? error.searchValue : "hint: min-length is 5"}
         </span>
       </div>
       <Btn
-        btnInfo={{ handleSubmit, type: "submit", content: "Search" }}
+        btnInfo={{
+          handleSubmit,
+          type: "submit",
+          content: "Search",
+          classBtn: "submit-class",
+        }}
       />
     </main>
   );
