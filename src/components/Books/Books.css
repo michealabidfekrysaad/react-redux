@@ -1,4 +1,10 @@
-.book {
+.books-list {
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.books-list .book {
     width: 20%;
     padding: 0 15px;
     margin: 30px auto;

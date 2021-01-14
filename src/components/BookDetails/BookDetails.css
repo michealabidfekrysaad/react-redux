@@ -1,28 +1,28 @@
-.bg-image {
+.book-details .book-cover {
   height: 200px;
   background-position: center; 
   background-repeat: no-repeat;
   background-size: auto;
 }
-.card {
-  transition: 0.3s;
+.book-details .card {
+  transition: 0.5s;
 }
 
-.card > a > .container {
-  text-decoration: none !important;
+.book-details .card > a > .container {
   padding: 2px 16px;
   min-height: 160px;
   color: white;
 }
 
-.card:hover {
+.book-details .card:hover {
   box-shadow: 0 0 12px #adaeffab;
 }
 
-a:link {
+.book-details a:link {
   text-decoration: none;
 }
-.truncate {
+
+.book-details .truncate-text {
   width: 90%;
   white-space: nowrap;
   overflow: hidden;
@@ -32,6 +32,13 @@ a:link {
 
 
 
-/* {
-  imageLinks ? imageLinks.thumbnail : "https://via.placeholder.com/150"
-} */
+
+
+
+
+
+
+
+
+
+

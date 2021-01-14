@@ -1,14 +1,15 @@
 import React from "react";
 import SearchInput from "../components/SearchInput/SearchInput";
 import Books from "../components/Books/Books";
+import "./App.css";
 
 const AppComp = () => (
-  <React.Fragment>
+  <main className="App">
       <h2>Search for your Book</h2>
       <SearchInput />
       <h2>Books</h2>
       <Books />
-  </React.Fragment>
+  </main>
 );
 
 export default AppComp;
