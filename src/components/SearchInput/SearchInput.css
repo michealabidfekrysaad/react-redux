@@ -1,3 +1,18 @@
 form {
     padding: 20px;
   }
+
+.normal-class {
+  display: block;
+  width: 40%;
+  margin: auto;
+  text-align: left;
+}
+
+.error-class {
+  display: block;
+  width: 40%;
+  margin: auto;
+  text-align: left;
+  color: red;
+}

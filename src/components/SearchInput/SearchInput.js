@@ -5,13 +5,6 @@ import Input from "../Input/Input";
 import Btn from "../Btn/Btn";
 import { moviesRequest } from "../../store/actions/Movies";
 
-let style = {
-  display: "block",
-  width: "40%",
-  margin: "auto",
-  textAlign: "left",
-};
-
 const SearchInput = (props) => {
   const [searchValue, setSearchValue] = useState("");
   const [error, setError] = useState({ searchValue: "" });
@@ -26,20 +19,13 @@ const SearchInput = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const { moviesRequest } = props;
+    console.log(error.searchValue);
     if (searchValue.length < 5) {
       setError({
         searchValue: `Increase length of text by ${5 - searchValue.length}`,
       });
-      style = {
-        ...style,
-        color: "red",
-      };
     } else {
       setError({ searchValue: "" });
-      style = {
-        ...style,
-        color: "white",
-      };
       moviesRequest({ searchValue });
     }
     // ana weselt lel movies.js inisde saga
@@ -55,10 +41,10 @@ const SearchInput = (props) => {
             placeHolder: "enter your movie name",
             type: "text",
             id: "searchValue",
-            classInput: "text-class"
+            classInput: "text-class",
           }}
         />
-        <span style={style}>
+        <span className={!error.searchValue ? "normal-class" : "error-class"}>
           {error.searchValue ? error.searchValue : "hint: min-length is 5"}
         </span>
       </div>
